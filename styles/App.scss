@@ -179,6 +179,9 @@ main {
             @media (max-width: 1440px) {
               font-size: 128px;
             }
+            @media (max-width: 900px) {
+              font-size: 12vw;
+            }
           }
         }
       }
@@ -190,7 +193,7 @@ main {
         height: 100%;
         width: 100%;
         .thumbnail-single {
-          width: 100%;
+          width: 100vw;
           height: 800px;
           margin: 0 auto;
           overflow: hidden;
@@ -205,22 +208,21 @@ main {
           }
         }
       }
-      .scroll-for-more {
-        position: absolute;
-        bottom: 200px;
-        left: 200px;
-        z-index: 20;
-        .icon {
-          svg {
-            height: auto;
-            width: 28px;
-          }
+    }
+    .scroll-for-more {
+      position: absolute;
+      bottom: 20px;
+      z-index: 20;
+      .icon {
+        svg {
+          height: auto;
+          width: 28px;
         }
-        .text {
-          margin-top: 8px;
-          color: $white;
-          text-transform: uppercase;
-        }
+      }
+      .text {
+        margin-top: 8px;
+        color: $white;
+        text-transform: uppercase;
       }
     }
   }

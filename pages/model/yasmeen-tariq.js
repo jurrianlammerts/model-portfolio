@@ -121,11 +121,11 @@ const Model = ({ imageDetails }) => {
                   }}
                   animate={{
                     y: 0,
-                    width: '100%',
+                    width: '100vw',
                     height:
                       browserWindow && browserWindow.innerWidth > 1440
                         ? 800
-                        : 400,
+                        : 600,
                     transition: { delay: 0.2, ...transition },
                   }}
                   className="thumbnail-single"
@@ -144,14 +144,16 @@ const Model = ({ imageDetails }) => {
                         transition: { delay: 0.2, ...transition },
                         y:
                           browserWindow && browserWindow.innerWidth > 1440
-                            ? -1200
-                            : -600,
+                            ? -1000
+                            : -400,
                       }}
                     />
                   </motion.div>
                 </motion.div>
               </motion.div>
             </div>
+          </div>
+          <div className="container">
             <ScrollForMore />
           </div>
         </div>
@@ -159,7 +161,8 @@ const Model = ({ imageDetails }) => {
           <div className="container">
             <div className="row">
               <h2 className="title">
-                The insiration behind the artwork & <br /> what it means.
+                The artistic inspiration behind the artwork & <br /> what it
+                means.
               </h2>
               <p>
                 Contrary to popular belief, Lorem Ipsum is not simply random
