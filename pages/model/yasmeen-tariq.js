@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
-// Components
 import ScrollForMore from '../../components/ScrollForMore';
 import Layout from '../../components/Layout';
+import Image from 'next/image';
+
 // Ease
 const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
@@ -121,10 +122,14 @@ const Model = ({ imageDetails }) => {
                   }}
                   animate={{
                     y: 0,
-                    width: '100vw',
+                    width: '100%',
                     height:
                       browserWindow && browserWindow.innerWidth > 1440
+                        ? 900
+                        : browserWindow && browserWindow.innerWidth > 960
                         ? 800
+                        : browserWindow && browserWindow.innerWidth > 480
+                        ? 700
                         : 600,
                     transition: { delay: 0.2, ...transition },
                   }}
@@ -144,8 +149,12 @@ const Model = ({ imageDetails }) => {
                         transition: { delay: 0.2, ...transition },
                         y:
                           browserWindow && browserWindow.innerWidth > 1440
-                            ? -1000
-                            : -400,
+                            ? -900
+                            : browserWindow && browserWindow.innerWidth > 960
+                            ? -400
+                            : browserWindow &&
+                              browserWindow.innerWidth > 480 &&
+                              0,
                       }}
                     />
                   </motion.div>
@@ -179,6 +188,46 @@ const Model = ({ imageDetails }) => {
                 Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
                 in section 1.10.32.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div className="gallery">
+            <div className="gallery-image">
+              <Image
+                src="/images/unsplash_1.jpg"
+                alt="Picture of the model"
+                layout="responsive"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="gallery-image">
+              <Image
+                src="/images/unsplash_2.jpg"
+                alt="Picture of the model"
+                layout="responsive"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="gallery-image">
+              <Image
+                src="/images/unsplash_3.jpg"
+                alt="Picture of the model"
+                layout="responsive"
+                width={500}
+                height={500}
+              />
+            </div>
+            <div className="gallery-image">
+              <Image
+                src="/images/unsplash_4.jpg"
+                alt="Picture of the model"
+                layout="responsive"
+                width={500}
+                height={500}
+              />
             </div>
           </div>
         </div>

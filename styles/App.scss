@@ -28,7 +28,9 @@ body {
   }
 }
 
-//Header
+.index {
+  height: 100vh;
+}
 
 .container {
   flex-grow: 1;
@@ -102,7 +104,6 @@ main {
     position: relative;
     .row {
       position: relative;
-      height: 100vh;
       align-items: center;
       .image-container {
         position: relative;
@@ -119,7 +120,13 @@ main {
         .number {
           position: absolute;
           top: 0;
-          left: -100px;
+          left: -80px;
+          z-index: 2;
+          display: none;
+          @media (min-width: 760px) {
+            display: block;
+          }
+
           font-family: 'Maragsa';
           font-size: 80px;
           line-height: 1;
@@ -143,7 +150,6 @@ main {
   }
 }
 
-//single
 .single {
   .container {
     .top-row {
@@ -153,9 +159,13 @@ main {
       .top {
         padding-bottom: 40px;
         .details {
-          display: flex;
+          display: none;
           align-items: center;
           justify-content: space-between;
+          @media (min-width: 480px) {
+            display: flex;
+          }
+
           .location {
             span:nth-child(2) {
               margin-left: 16px;
@@ -168,7 +178,10 @@ main {
         .model {
           overflow: hidden;
           .first {
-            margin-right: 72px;
+            margin-right: 24px;
+            @media (min-width: 480px) {
+              margin-right: 72px;
+            }
           }
           span {
             display: inline-block;
@@ -193,8 +206,7 @@ main {
         height: 100%;
         width: 100%;
         .thumbnail-single {
-          width: 100vw;
-          height: 800px;
+          width: 100%;
           margin: 0 auto;
           overflow: hidden;
           position: absolute;
@@ -229,22 +241,53 @@ main {
 }
 
 .detailed-information {
-  margin-top: 200px;
-  height: 600px;
+  margin-top: 360px;
   .container {
     .row {
-      justify-content: space-between;
+      justify-content: flex-start;
+      flex-direction: column;
       align-items: flex-start;
+      display: flex;
+
+      @media (min-width: 900px) {
+        justify-content: space-between;
+        flex-direction: row;
+        h2 {
+          font-size: 28px;
+          padding: 0;
+          min-width: 35%;
+        }
+      }
+
       h2 {
         font-size: 28px;
       }
+
       p {
         font-family: 'Helvetica Neue';
         font-size: 16;
         line-height: 28px;
         font-weight: 400;
-        width: 800px;
       }
     }
+  }
+}
+
+.gallery {
+  width: 100%;
+  display: grid;
+  grid-gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+
+  @media (min-width: 720px) {
+    grid-gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .gallery-image {
+    height: 100%;
+    width: 100%;
   }
 }
