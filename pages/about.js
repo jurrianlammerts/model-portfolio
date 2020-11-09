@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 export default function Home() {
   return (
     <Layout>
-      <Link href="/about">about</Link>
+      <Link href="/">home</Link>
     </Layout>
   );
 }
