@@ -13,6 +13,7 @@ const Home = ({ image }) => (
       <div className="container">
         <div className="row center">
           <div className="image-container">
+            <div className="number">01</div>
             <div
               className="thumbnail"
               ref={image}

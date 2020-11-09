@@ -2,6 +2,14 @@ $main: #f0d8bb;
 $white: #ffffff;
 $black: #1e1f13;
 
+@font-face {
+  font-family: 'Maragsa';
+  src: url('/fonts/Maragsa.ttf');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   font-family: 'HelveticaNeue-CondensedBold', -apple-system, BlinkMacSystemFont,
@@ -138,6 +146,7 @@ main {
   .container {
     position: relative;
     .row {
+      position: relative;
       height: 100vh;
       align-items: center;
       .image-container {
@@ -151,6 +160,14 @@ main {
               width: 100%;
             }
           }
+        }
+        .number {
+          position: absolute;
+          top: 0;
+          left: -100px;
+          font-family: 'Maragsa';
+          font-size: 80px;
+          line-height: 1;
         }
         .information {
           position: absolute;
